@@ -1,230 +1,263 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Arial,sans-serif;
 }
 
-body {
-    background: #f4f7fb;
-    color: #2c3e50;
+html,
+body{
+    background:#eef3f8;
+    color:#2d3748;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+/* ===== Layout ===== */
+
+.container{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
 }
 
-/* HEADER */
+/* ===== Header ===== */
 
-header {
-    background: white;
-    height: 85px;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    box-shadow: 0 3px 10px rgba(0,0,0,.08);
-}
-
-.logo-section{
+header{
+    height:72px;
+    background:#ffffff;
     display:flex;
     align-items:center;
-    gap:15px;
+    justify-content:space-between;
+    padding:0 20px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .logo{
-    width:60px;
-    height:60px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-circle{
+    width:50px;
+    height:50px;
     border-radius:50%;
-    background:#1d7af3;
+    background:#0d6efd;
+    color:#fff;
     display:flex;
     align-items:center;
     justify-content:center;
-    color:white;
-    font-size:26px;
     font-weight:bold;
+    font-size:20px;
+    flex-shrink:0;
 }
 
-.logo-title h1{
-    font-size:24px;
+.logo-text h2{
+    font-size:20px;
+    color:#0d6efd;
 }
 
-.logo-title p{
+.logo-text p{
     color:#777;
+    font-size:13px;
 }
 
 .login-btn{
-
     text-decoration:none;
-    background:#1d7af3;
+    background:#0d6efd;
     color:white;
-
-    padding:12px 25px;
-
+    padding:10px 20px;
     border-radius:8px;
-
-    transition:.3s;
+    font-weight:600;
+    transition:.25s;
 }
 
 .login-btn:hover{
-    background:#0b5fcb;
+    background:#0954c9;
 }
 
-
-/* MAIN */
+/* ===== Main ===== */
 
 main{
-
     flex:1;
-
-    padding:40px;
-
+    width:min(1200px,95%);
+    margin:auto;
+    padding:35px 0;
 }
+
+.page-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.page-title h1{
+    font-size:34px;
+    color:#0d6efd;
+}
+
+.page-title p{
+    margin-top:8px;
+    color:#666;
+}
+
+/* ===== Rooms ===== */
 
 .rooms{
-
     display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
-
-    gap:30px;
-
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
 }
-
 
 .room-card{
-
     background:white;
-
-    border-radius:15px;
-
-    padding:30px;
-
+    border-radius:18px;
+    padding:28px;
     box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
 
+.room-header{
     display:flex;
-
-    flex-direction:column;
-
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
 }
 
-
-.room-title{
-
+.room-name{
     font-size:28px;
-
+    color:#0d6efd;
     font-weight:bold;
-
-    color:#1d7af3;
-
-    margin-bottom:15px;
-
 }
 
-.doctor{
-
-    font-size:20px;
-
-    margin-bottom:15px;
-
+.status{
+    background:#e8f8ee;
+    color:#1b8b49;
+    padding:6px 12px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
 }
 
-.description{
-
-    color:#666;
-
-    line-height:1.6;
-
-    margin-bottom:30px;
-
+.info{
+    margin-bottom:25px;
 }
 
-.current-label{
-
-    text-align:center;
-
-    font-size:18px;
-
-    color:#888;
-
+.info strong{
+    color:#0d6efd;
 }
 
-.current-number{
-
+.info p{
     margin-top:10px;
-
-    text-align:center;
-
-    font-size:90px;
-
-    font-weight:bold;
-
-    color:#16a34a;
-
+    color:#666;
+    line-height:1.6;
 }
 
-/* FOOTER */
+.serving{
+    text-align:center;
+    padding:18px;
+    border-radius:15px;
+    background:#f7fbff;
+}
+
+.serving small{
+    display:block;
+    color:#666;
+    font-size:16px;
+    letter-spacing:1px;
+}
+
+.queue-number{
+    font-size:clamp(52px,8vw,90px);
+    font-weight:bold;
+    color:#16a34a;
+    margin-top:10px;
+}
+
+/* ===== Footer ===== */
 
 footer{
-
     background:#0f172a;
-
     color:white;
-
+    padding:18px;
     text-align:center;
+}
 
-    padding:25px;
-
+footer p{
+    font-size:15px;
+    opacity:.85;
 }
 
 footer h2{
-
-    font-size:34px;
-
     margin-top:8px;
-
     color:#38bdf8;
+    font-size:clamp(22px,4vw,34px);
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width:900px){
+
+.rooms{
+    grid-template-columns:1fr;
+}
 
 }
 
-/* MOBILE */
-
-@media(max-width:700px){
+@media (max-width:600px){
 
 header{
+    padding:0 15px;
+    height:68px;
+}
 
-    flex-direction:column;
+.logo-text{
+    display:none;
+}
 
-    height:auto;
+.logo-circle{
+    width:45px;
+    height:45px;
+    font-size:18px;
+}
 
+.login-btn{
+    padding:9px 16px;
+    font-size:14px;
+}
+
+main{
+    width:94%;
+    padding:20px 0;
+}
+
+.page-title h1{
+    font-size:28px;
+}
+
+.page-title p{
+    font-size:14px;
+}
+
+.room-card{
     padding:20px;
-
-    gap:15px;
-
 }
 
-.logo-title h1{
-
-    font-size:20px;
-
+.room-name{
+    font-size:22px;
 }
 
-.current-number{
+.info{
+    font-size:15px;
+}
 
-    font-size:70px;
+.queue-number{
+    font-size:56px;
+}
 
+footer h2{
+    font-size:22px;
 }
 
 }
@@ -234,20 +267,20 @@ header{
 
 <header>
 
-    <div class="logo-section">
+    <div class="logo">
 
-        <div class="logo">
+        <div class="logo-circle">
             MC
         </div>
 
-        <div class="logo-title">
-            <h1>Miranda Clinics</h1>
+        <div class="logo-text">
+            <h2>Miranda Clinic</h2>
             <p>Queue Management System</p>
         </div>
 
     </div>
 
-    <a class="login-btn" href="/login">
+    <a href="/login" class="login-btn">
         Login
     </a>
 
@@ -255,56 +288,60 @@ header{
 
 <main>
 
+<div class="page-title">
+    <h1>Now Serving</h1>
+    <p>Please proceed when your queue number is displayed.</p>
+</div>
+
 <div class="rooms">
 
-<div class="room-card">
+    <div class="room-card">
 
-    <div class="room-title">
-        Room 1
+        <div class="room-header">
+            <div class="room-name">Room 1</div>
+            <div class="status">OPEN</div>
+        </div>
+
+        <div class="info">
+            <strong>Doctor</strong><br>
+            Dr. Juan Dela Cruz
+
+            <p>
+                General consultation, family medicine, routine checkups,
+                medical certificates, and follow-up consultations.
+            </p>
+        </div>
+
+        <div class="serving">
+            <small>CURRENTLY SERVING</small>
+            <div class="queue-number">A-001</div>
+        </div>
+
     </div>
 
-    <div class="doctor">
-        <strong>Doctor:</strong> Dr. Kenneth Miranda
+    <div class="room-card">
+
+        <div class="room-header">
+            <div class="room-name">Room 2</div>
+            <div class="status">OPEN</div>
+        </div>
+
+        <div class="info">
+            <strong>Doctor</strong><br>
+            Dr. Maria Santos
+
+            <p>
+                Pediatrics, child wellness examinations, vaccinations,
+                developmental assessments and follow-up visits.
+            </p>
+        </div>
+
+        <div class="serving">
+            <small>CURRENTLY SERVING</small>
+            <div class="queue-number">B-014</div>
+        </div>
+
     </div>
-
-    <div class="description">
-        General consultation, family medicine, follow-up checkups and basic healthcare services.
-    </div>
-
-    <div class="current-label">
-        CURRENTLY SERVING
-    </div>
-
-    <div class="current-number">
-        A-023
-    </div>
-
-</div>
-
-
-<div class="room-card">
-
-    <div class="room-title">
-        Room 2
-    </div>
-
-    <div class="doctor">
-        <strong>Doctor:</strong> Dr. Kath Miranda
-    </div>
-
-    <div class="description">
-        Pediatrics consultation, child wellness examinations, immunization and routine follow-up.
-    </div>
-
-    <div class="current-label">
-        CURRENTLY SERVING
-    </div>
-
-    <div class="current-number">
-        B-067
-    </div>
-
-</div>
 
 </div>
 
@@ -312,24 +349,13 @@ header{
 
 <footer>
 
-    <div>
-        Now Serving
-    </div>
+    <p>NOW SERVING</p>
 
     <h2>
-        Room 1 — A-023 &nbsp;&nbsp; | &nbsp;&nbsp; Room 2 — B-067
+        Room 1 — A-001 &nbsp;&nbsp;|&nbsp;&nbsp; Room 2 — B-014
     </h2>
 
 </footer>
 
 </div>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
 <router-outlet />
