@@ -1,0 +1,9 @@
+{
+    "microservice": {
+        "baseURL": "https://localhost:7128",
+        "queueService": {
+            "getTodaysQueue": "/api/queue/getTodaysQueue",
+            "addQueueInfo": "/api/queue/addQueueInfo"
+        }
+    }
+}

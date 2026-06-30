@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
@@ -12,5 +12,6 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './room-card-component.scss',
 })
 export class RoomCardComponent {
-
+  @Input() public queueNumber: string = '';
+  @Input() public roomNumber: string = '';
 }

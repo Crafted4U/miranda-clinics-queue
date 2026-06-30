@@ -4,5 +4,16 @@
         margin-top: 50px;
         display: flex;
         justify-content: center;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 773px)  {
+    .container {
+
+        .room-card {
+            flex-direction: column;
+            justify-content: center;
+        }
     }
 }
