@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { QueueService, QueueResponse } from './services/queue.service';
 
@@ -12,7 +12,7 @@ export class App implements OnInit {
 
   queue?: QueueResponse;
 
-  constructor(private queueService: QueueService) {}
+  constructor(private queueService: QueueService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
 
@@ -30,6 +30,7 @@ export class App implements OnInit {
       next: (data) => {
         console.log('API response received:', data);
         this.queue = data;
+        this.cdr.detectChanges();
         console.log('queue assigned:', this.queue);
       },
       error: (err) => {
