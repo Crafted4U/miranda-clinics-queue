@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { QueueService } from './services/queue.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,29 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
-  protected readonly title = signal('miranda-clinics-web');
+export class App implements OnInit {
+
+  queue: any;
+
+  constructor(private queueService: QueueService) {}
+
+  ngOnInit(): void {
+    this.loadQueue();
+
+    setInterval(() => {
+      this.loadQueue();
+    }, 1000);
+  }
+
+  loadQueue() {
+    this.queueService.getQueue().subscribe({
+      next: (data) => {
+        this.queue = data;
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
+
 }

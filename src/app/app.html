@@ -328,7 +328,9 @@ footer h2{
 
         <div class="serving">
             <small>CURRENTLY SERVING</small>
-            <div class="queue-number">001</div>
+            <div class="queue-number">
+                {{ queue?.room1?.number }}
+            </div>
         </div>
 
     </div>
@@ -351,12 +353,15 @@ footer h2{
 
         <div class="serving">
             <small>CURRENTLY SERVING</small>
-            <div class="queue-number">014</div>
+            <div class="queue-number">
+                {{ queue?.room2?.number }}
+            </div>
         </div>
 
     </div>
 
 </div>
+
 
 </main>
 
