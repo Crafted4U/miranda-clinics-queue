@@ -1,0 +1,48 @@
+.container {
+    background:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    .logo {
+        display:flex;
+        align-items:center;
+        padding: 12px;
+
+        .logo-image {
+            width:60px;
+            height:60px;
+            object-fit:contain;
+        }
+
+        .logo-text {
+            padding-left: 13px;
+            h2 {
+                margin: 0;
+                font-size:25px;
+                color:#0d6efd;
+            }
+
+            p {
+                margin: 0;
+                color:#777;
+                font-size:16px;
+            }
+        }
+    }
+
+    // .login-btn {
+    //     text-decoration:none;
+    //     background:#0d6efd;
+    //     color:white;
+    //     padding:10px;
+    //     border-radius:8px;
+    //     font-weight:600;
+    //     transition:.25s;
+    // }
+}

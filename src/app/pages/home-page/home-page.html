@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="room-card">
+        @for(room of queueRooms; let index = $index; track $index) {
+            <app-room-card-component></app-room-card-component>
+        }
+    </div>
+    
+</div>

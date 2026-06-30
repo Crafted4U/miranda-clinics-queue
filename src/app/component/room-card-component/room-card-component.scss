@@ -1,0 +1,66 @@
+@use '@angular/material' as mat;
+
+.container {
+  width: 95%;
+
+  .room-card {
+
+    .room-card-header {
+      width: 100%;
+      margin: 0px 20px;
+
+      .card-title {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 28px;
+        color: #0d6efd;
+        gap: 10px;
+
+        .room-status {
+            @include mat.button-overrides((
+                filled-disabled-container-color: #e8f8ee,
+                filled-disabled-label-text-color: #1b8b49
+            ));
+        }
+      }
+
+      .dr-name {
+        font-weight: 700;
+        font-size: 28px;
+        color: #0d6efd;
+      }
+    }
+
+    .room-card-content {
+        margin: 0px 20px;
+        
+        .doctor-description {
+            font-size: large;
+            margin-bottom: 40px;
+        }
+
+        .current-queue {
+            background-color: #ebf1f8;
+            border-radius: 15px;
+            padding: 18px;
+
+            p {
+                text-align: center;
+                font-size: 18px;
+                color: #666;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            h2 {
+                text-align: center;
+                font-weight: 700;
+                color: #16a34a;
+                font-size: 80px;
+            }
+        }
+    }
+  }
+}
