@@ -31,15 +31,3 @@ jobs:
       - name: Push image
         run: |
           docker push ghcr.io/crafted4u/miranda-clinics-queue:latest
-          
-      - name: Deploy to VPS
-        uses: appleboy/ssh-action@v1.2.2
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd ~/compose/miranda-clinics-web
-            docker compose pull
-            docker compose up -d
-            docker image prune -f
