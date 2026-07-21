@@ -2,17 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+export interface QueueRoom {
+  room: string;
+  doctor: string;
+  number: string;
+  doctorIn?: boolean;
+}
+
 export interface QueueResponse {
-  room1: {
-    room: string;
-    doctor: string;
-    number: string;
-  };
-  room2: {
-    room: string;
-    doctor: string;
-    number: string;
-  };
+  room1: QueueRoom;
+  room2: QueueRoom;
 }
 
 @Injectable({

@@ -142,6 +142,16 @@ main{
     font-weight:600;
 }
 
+.status-in{
+    background:#e8f8ee;
+    color:#1b8b49;
+}
+
+.status-out{
+    background:#fee2e2;
+    color:#b91c1c;
+}
+
 .info{
     margin-bottom:25px;
 }
@@ -310,7 +320,9 @@ footer h2{
 
         <div class="room-header">
             <div class="room-name">INTERNAL MEDICINE</div>
-            <!--<div class="status">OPEN</div>-->
+            <div class="status" [class.status-in]="queue?.room1?.doctorIn" [class.status-out]="queue?.room1?.doctorIn === false">
+                {{ queue?.room1?.doctorIn ? 'IN' : 'OUT' }}
+            </div>
         </div>
 
         <div class="info">
@@ -334,7 +346,9 @@ footer h2{
 
         <div class="room-header">
             <div class="room-name">PEDIA</div>
-            <!--<div class="status">OPEN</div>-->
+            <div class="status" [class.status-in]="queue?.room2?.doctorIn" [class.status-out]="queue?.room2?.doctorIn === false">
+                {{ queue?.room2?.doctorIn ? 'IN' : 'OUT' }}
+            </div>
         </div>
 
         <div class="info">

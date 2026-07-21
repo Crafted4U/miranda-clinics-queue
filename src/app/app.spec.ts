@@ -32,6 +32,20 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
+  it('renders the doctor presence status for each room', () => {
+    queueService.getQueue.and.returnValue(of({
+      room1: { room: 'Room 1', doctor: 'Dr. A', number: '10', doctorIn: true },
+      room2: { room: 'Room 2', doctor: 'Dr. B', number: '20', doctorIn: false },
+    }));
+
+    const fixture = TestBed.createComponent(App);
+    fixture.detectChanges();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain('IN');
+    expect(compiled.textContent).toContain('OUT');
+  });
+
   it('plays a sound when the queue number changes', () => {
     queueService.getQueue.and.returnValues(
       of({
